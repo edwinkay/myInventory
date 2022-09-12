@@ -1,5 +1,5 @@
 //get DOM elements
-import { products } from './db';
+import { products } from './db.js';
 const $root = document.querySelector('#root')
 const $product = document.querySelector('#product')
 const $order = document.querySelector('#order')
@@ -26,7 +26,7 @@ $root.addEventListener('click', (event) => {
 // app methods
 
 const removeCart = (id) => {
-    
+
     const clearOrders = orders.filter(order => order.id != id)
     console.log(clearOrders)
 
@@ -47,7 +47,7 @@ const addCart = (id) => {
     if (exist) {
         //accumulate amount and price
         const orderExist = orders.find(order => order.id == product.id)
-        const accAmount = orderExist.amount+1
+        const accAmount = orderExist.amount + 1
         const accSubtotal = orderExist.price * accAmount
         const accOrderProduct = OrderProduct(product, accAmount, accSubtotal)
         //remove old product
@@ -55,7 +55,7 @@ const addCart = (id) => {
         //TODO: remove old order product before
         //update order list
         orders = [...cleanOrder, accOrderProduct]
-    }else{
+    } else {
         //update order list with selected product
         const newOrderProduct = OrderProduct(product)
         orders = [...orders, newOrderProduct]
@@ -63,23 +63,23 @@ const addCart = (id) => {
     const createSubtotal = orders.map((sub) => sub.subtotal)
 
     const toPay = createSubtotal.reduce((prev, current) => prev + current, 0)
-        // const toPay = orders.reduce((prev, current) => {
-        // console.log(current.subtotal)
-        // return prev.subtotal ?? 0 + current.subtotal ?? 0
-        // }, 0)
+    // const toPay = orders.reduce((prev, current) => {
+    // console.log(current.subtotal)
+    // return prev.subtotal ?? 0 + current.subtotal ?? 0
+    // }, 0)
     console.log(toPay)
-    
-    
+
+
     //generate dom elements for print in html
     const htmlOrder = orders.map(order => genRowOrder(order)).join('')
     //render in html    
     $order.innerHTML = htmlOrder
-    
+
     $totalOrder.innerHTML = `$${toPay}`
-      
+
 }
 
-const OrderProduct = (product, amount=1, subtotal=null) => {
+const OrderProduct = (product, amount = 1, subtotal = null) => {
     return {
         id: product.id,
         name: product.name,
@@ -93,7 +93,7 @@ const OrderProduct = (product, amount=1, subtotal=null) => {
 
 //DOM generators
 const genRowTable = (product) => {
-    const {name, price, id, img, unit, units} = product
+    const { name, price, id, img, unit, units } = product
     return (
         `
             <tr>
@@ -112,8 +112,8 @@ const genRowTable = (product) => {
 }
 
 const genRowOrder = (orderProduct) => {
-    const {name, price, /* flavors, */ amount, subtotal, id} = orderProduct
-    return(
+    const { name, price, /* flavors, */ amount, subtotal, id } = orderProduct
+    return (
         `
             <tr>
                 <td>${name}</td>

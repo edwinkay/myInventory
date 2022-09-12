@@ -54,6 +54,7 @@ export const products = [
         units: 0,
         price: 4200,
         img: "https://cdn.shopify.com/s/files/1/0290/6724/7709/products/003421_1000x1000.jpg"
-    },    
-    
+    },
+
 ]
+
