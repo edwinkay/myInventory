@@ -1,141 +1,128 @@
-body {
-    margin: 0;
-    font-family: "Comforter Brush", cursive;
-    font-family: "Estonia", cursive;
-    font-family: "Quicksand", sans-serif;
-    background-color: rgb(228, 228, 228);
+* {
+  padding: 0;
+  margin: 0;
 }
-
 #root {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.uno{
+  flex-grow: 0,5;
+}
+.dos {
+  flex-grow: 10;
+}
+.tres {
+  flex-grow: 4;
 }
 
 .menu-navbar {
-    padding: 24px;
-    background-color: rgb(27, 26, 26);
-    color: white;
-    width: 17%;
-    height: 100%;
-    box-sizing: border-box;
+  padding: 24px;
+  background-color: rgb(27, 26, 26);
 }
-
-.menu-navbar a {
+.menu-navbar a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     /* margin-bottom: 24;
     display: inline-block; */
 }
-
-.ul1 {
+.ul1{
     padding: 0;
     margin: 37px 0 0;
     list-style: none;
     border-bottom: 1px solid white;
     width: 100%;
 }
-
-.ul2 {
+.ul2{
     padding: 0;
     margin: 70px 0 0;
     list-style: none;
     border-bottom: 1px solid white;
     width: 100%;
 }
-
-.ul3 {
+.ul3{
     padding: 0;
     margin: 35px 0 0;
     list-style: none;
 }
 
-.menu-navbar ul:nth-child(2) {
+.menu-navbar ul:nth-child(2){
     display: inline-block;
 }
 
-.menu-navbar ul li {
+.menu-navbar ul li{
     margin-bottom: 24px;
 }
-
-.menu-navbar .email {
+.menu-navbar .email{
     font-size: 14px;
     font-weight: 300 !important;
-    word-wrap: break-word;
+    word-wrap: break-word;    
 }
-
-.sign-out {
+.sign-out{
     color: greenyellow !important;
     font-size: 14px;
 }
-
-/* /////////////////////////////////////////////////////////////////////////////////// */
-
-
 .container {
-    width: 50%;
-    margin: 14px;
-    padding: 12px;
-    border-radius: 6px;
-    background-color: rgb(252, 243, 240);
-    border: 1px solid black;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    align-items: center;
+  margin: 14px 9px 14px 20px;
+  padding: 12px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(252, 243, 240);
 }
-
-.container h1 {
-    text-align: center;
+.container h1{
+    margin-bottom: 10px;
 }
-
-.container table {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.container table,
-th,
-td {
-    margin-left: 12px;
-    text-align: center;
-}
-
 .container-orders {
-    background-color: rgb(252, 243, 240);
-    border: 1px solid black;
-    margin: 14px;
-    padding: 12px;
-    border-radius: 6px;
-    width: 33%;
-    box-sizing: border-box;
+  margin: 14px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(252, 243, 240);
 }
-
-.container-orders h3 {
-    text-align: center;
-}
-
-.container-orders table {
-    width: 100%;
-}
-
-.total-order {
-    display: flex;
-    margin-bottom: 0%;
-}
-
-.total {
-    height: 24vh;
-    width: 50vh;
-    display: grid;
-    place-content: end;
-}
-
 .image {
-    width: 100px;
-    height: 60px;
-    object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+@media (max-width: 640px){
+    .delete{
+        display: none;
+    }
+    .menu-navbar{
+        margin: 14px;
+        border-radius: 6px;
+        padding: 4px;
+        display:flex ;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .menu-navbar a{
+    
+}
+.ul1{
+    display: flex;
+    gap: 12px;
+    margin: 4px;
+}
+.ul2{
+    display: none;
+}
+.ul3{
+    display: flex;
+    margin: 5px;
+    gap: 12px;
+}
+.uno{
+    padding-bottom: 0;
+}
+
 }
