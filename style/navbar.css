@@ -77,7 +77,13 @@
 .container h1{
     margin-bottom: 10px;
 }
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
 .container-orders {
+  padding: 12px;
   margin: 14px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 6px;
@@ -86,11 +92,23 @@
   text-align: center;
   background-color: rgb(252, 243, 240);
 }
-.image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+.container-orders table{
+  margin-bottom: 12px;
 }
+.container-orders th{
+  padding-bottom: 6px;
+}
+#order td{
+  padding-bottom: 5px;
+}
+.total{
+    display: grid;
+    justify-content: flex-end;
+}
+.total span{
+  text-align: start;
+}
+
 @media (max-width: 640px){
     .delete{
         display: none;
